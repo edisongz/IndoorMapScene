@@ -210,11 +210,8 @@
     for(NSUInteger i = 0; i < countCoord; i++)
     {
         NSUInteger index = i<<1;
-        CGPoint aPoint = \
-        CGPointMake([[data
-                      objectAtIndex:index] floatValue]
-                    , [[data
-                        objectAtIndex:index+1] floatValue]);
+        CGPoint aPoint = CGPointMake([[data objectAtIndex:index] floatValue],
+                                     [[data objectAtIndex:index+1] floatValue]);
         
         if(isFirstPoint)
         {
@@ -257,7 +254,6 @@
     curRow = curY;
 	aimCol = aimX;
 	aimRow = aimY;
-//	map = passmap
     path = [[NSMutableArray alloc] init];
     open = [[NSMutableArray alloc] init];
     

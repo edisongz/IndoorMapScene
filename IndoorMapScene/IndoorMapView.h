@@ -16,6 +16,9 @@
 
 @property (nonatomic, strong) UIImageView *mapView;
 @property (nonatomic, strong) UIImageView *tagImageView;
+
+@property (nonatomic, strong) UIImageView *startImageView;
+@property (nonatomic, strong) UIImageView *endImageView;
 @property (nonatomic, strong) UIImageView *pathImageView;
 
 @end

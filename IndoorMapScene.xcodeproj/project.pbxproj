@@ -26,6 +26,8 @@
 		1803555C181F58CC00E0A0DF /* IndoorMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1803555B181F58CC00E0A0DF /* IndoorMapView.m */; };
 		18035560181F59B000E0A0DF /* floor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1803555E181F59B000E0A0DF /* floor1.jpg */; };
 		18035561181F59B000E0A0DF /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 1803555F181F59B000E0A0DF /* tag.png */; };
+		188EFC79181F952200BAE962 /* UIImageView+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC78181F952200BAE962 /* UIImageView+Effects.m */; };
+		188EFC7B181F95EF00BAE962 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188EFC7A181F95EF00BAE962 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		1803555B181F58CC00E0A0DF /* IndoorMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndoorMapView.m; sourceTree = "<group>"; };
 		1803555E181F59B000E0A0DF /* floor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floor1.jpg; sourceTree = "<group>"; };
 		1803555F181F59B000E0A0DF /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		188EFC77181F952200BAE962 /* UIImageView+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Effects.h"; sourceTree = "<group>"; };
+		188EFC78181F952200BAE962 /* UIImageView+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Effects.m"; sourceTree = "<group>"; };
+		188EFC7A181F95EF00BAE962 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188EFC7B181F95EF00BAE962 /* QuartzCore.framework in Frameworks */,
 				1803551E181F574700E0A0DF /* CoreGraphics.framework in Frameworks */,
 				18035520181F574700E0A0DF /* UIKit.framework in Frameworks */,
 				1803551C181F574700E0A0DF /* Foundation.framework in Frameworks */,
@@ -96,6 +102,7 @@
 		1803550F181F574600E0A0DF = {
 			isa = PBXGroup;
 			children = (
+				18035562181F918300E0A0DF /* Views */,
 				1803555D181F59A500E0A0DF /* Resources */,
 				18035550181F57E000E0A0DF /* AStar */,
 				18035521181F574700E0A0DF /* IndoorMapScene */,
@@ -117,6 +124,7 @@
 		1803551A181F574700E0A0DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				188EFC7A181F95EF00BAE962 /* QuartzCore.framework */,
 				1803551B181F574700E0A0DF /* Foundation.framework */,
 				1803551D181F574700E0A0DF /* CoreGraphics.framework */,
 				1803551F181F574700E0A0DF /* UIKit.framework */,
@@ -189,6 +197,15 @@
 				1803555F181F59B000E0A0DF /* tag.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		18035562181F918300E0A0DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				188EFC77181F952200BAE962 /* UIImageView+Effects.h */,
+				188EFC78181F952200BAE962 /* UIImageView+Effects.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +313,7 @@
 				1803552C181F574700E0A0DF /* AppDelegate.m in Sources */,
 				18035555181F580400E0A0DF /* AStarItem.mm in Sources */,
 				18035528181F574700E0A0DF /* main.m in Sources */,
+				188EFC79181F952200BAE962 /* UIImageView+Effects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +520,7 @@
 				1803554C181F574700E0A0DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1803554D181F574700E0A0DF /* Build configuration list for PBXNativeTarget "IndoorMapSceneTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +529,7 @@
 				1803554F181F574700E0A0DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

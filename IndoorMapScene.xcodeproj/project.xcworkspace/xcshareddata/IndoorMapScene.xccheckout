@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>78A1BD3B-7FCC-48C6-867B-7F7DDB55D366</string>
+	<key>IDESourceControlProjectName</key>
+	<string>IndoorMapScene</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6C9C960D-057E-4066-AB24-3ECB9169931A</key>
+		<string>https://github.com/edisongz/IndoorMapScene.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IndoorMapScene.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6C9C960D-057E-4066-AB24-3ECB9169931A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/edisongz/IndoorMapScene.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6C9C960D-057E-4066-AB24-3ECB9169931A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6C9C960D-057E-4066-AB24-3ECB9169931A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IndoorMapScene</string>
+		</dict>
+	</array>
+</dict>
+</plist>
