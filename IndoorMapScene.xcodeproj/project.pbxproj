@@ -28,6 +28,8 @@
 		18035561181F59B000E0A0DF /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 1803555F181F59B000E0A0DF /* tag.png */; };
 		188EFC79181F952200BAE962 /* UIImageView+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC78181F952200BAE962 /* UIImageView+Effects.m */; };
 		188EFC7B181F95EF00BAE962 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188EFC7A181F95EF00BAE962 /* QuartzCore.framework */; };
+		188EFC7F181FB8F100BAE962 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC7E181FB8F100BAE962 /* Utils.m */; };
+		188EFC82181FC2E200BAE962 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC81181FC2E200BAE962 /* PopoverView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,10 @@
 		188EFC77181F952200BAE962 /* UIImageView+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Effects.h"; sourceTree = "<group>"; };
 		188EFC78181F952200BAE962 /* UIImageView+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Effects.m"; sourceTree = "<group>"; };
 		188EFC7A181F95EF00BAE962 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		188EFC7D181FB8F100BAE962 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		188EFC7E181FB8F100BAE962 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		188EFC80181FC2E200BAE962 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PopoverView.h; path = "../../../apple/Downloads/runway20-PopoverView/PopoverView/PopoverView.h"; sourceTree = "<group>"; };
+		188EFC81181FC2E200BAE962 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PopoverView.m; path = "../../../apple/Downloads/runway20-PopoverView/PopoverView/PopoverView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 		1803550F181F574600E0A0DF = {
 			isa = PBXGroup;
 			children = (
+				188EFC7C181FB8D500BAE962 /* Utils */,
 				18035562181F918300E0A0DF /* Views */,
 				1803555D181F59A500E0A0DF /* Resources */,
 				18035550181F57E000E0A0DF /* AStar */,
@@ -202,10 +209,21 @@
 		18035562181F918300E0A0DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				188EFC80181FC2E200BAE962 /* PopoverView.h */,
+				188EFC81181FC2E200BAE962 /* PopoverView.m */,
 				188EFC77181F952200BAE962 /* UIImageView+Effects.h */,
 				188EFC78181F952200BAE962 /* UIImageView+Effects.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		188EFC7C181FB8D500BAE962 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				188EFC7D181FB8F100BAE962 /* Utils.h */,
+				188EFC7E181FB8F100BAE962 /* Utils.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,11 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188EFC7F181FB8F100BAE962 /* Utils.m in Sources */,
 				18035556181F580400E0A0DF /* AStar.mm in Sources */,
 				1803555C181F58CC00E0A0DF /* IndoorMapView.m in Sources */,
 				18035559181F584300E0A0DF /* MapArea.m in Sources */,
 				18035532181F574700E0A0DF /* ViewController.m in Sources */,
 				1803552C181F574700E0A0DF /* AppDelegate.m in Sources */,
+				188EFC82181FC2E200BAE962 /* PopoverView.m in Sources */,
 				18035555181F580400E0A0DF /* AStarItem.mm in Sources */,
 				18035528181F574700E0A0DF /* main.m in Sources */,
 				188EFC79181F952200BAE962 /* UIImageView+Effects.m in Sources */,

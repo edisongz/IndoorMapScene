@@ -8,6 +8,7 @@
 
 #import "AStar.h"
 #import "AStarItem.h"
+#import "Utils.h"
 
 @implementation AStar
 
@@ -154,20 +155,13 @@
     NSString *obstacle05 = @"1667,764,1749,764,1750,694,1776,695,1777,786,1698,786,1698,901,1668,901";
     NSString *obstacle06 = @"1497,700,1580,700,1580,740,1497,740";
     
-    NSArray *data00 = [obstacle00 componentsSeparatedByString:@","];
-    NSArray *data01 = [obstacle01 componentsSeparatedByString:@","];
-    NSArray *data02 = [obstacle02 componentsSeparatedByString:@","];
-    NSArray *data03 = [obstacle03 componentsSeparatedByString:@","];
-    NSArray *data04 = [obstacle04 componentsSeparatedByString:@","];
-    NSArray *data05 = [obstacle05 componentsSeparatedByString:@","];
-    NSArray *data06 = [obstacle06 componentsSeparatedByString:@","];
-    UIBezierPath  *path00 = [self parseCoordinate:data00];
-    UIBezierPath  *path01 = [self parseCoordinate:data01];
-    UIBezierPath  *path02 = [self parseCoordinate:data02];
-    UIBezierPath  *path03 = [self parseCoordinate:data03];
-    UIBezierPath  *path04 = [self parseCoordinate:data04];
-    UIBezierPath  *path05 = [self parseCoordinate:data05];
-    UIBezierPath  *path06 = [self parseCoordinate:data06];
+    UIBezierPath  *path00 = [Utils bezierPathFromCoordinateString:obstacle00];
+    UIBezierPath  *path01 = [Utils bezierPathFromCoordinateString:obstacle01];
+    UIBezierPath  *path02 = [Utils bezierPathFromCoordinateString:obstacle02];
+    UIBezierPath  *path03 = [Utils bezierPathFromCoordinateString:obstacle03];
+    UIBezierPath  *path04 = [Utils bezierPathFromCoordinateString:obstacle04];
+    UIBezierPath  *path05 = [Utils bezierPathFromCoordinateString:obstacle05];
+    UIBezierPath  *path06 = [Utils bezierPathFromCoordinateString:obstacle06];
     
     if (CGPathContainsPoint(path00.CGPath,NULL,point,false))
     {
@@ -198,33 +192,6 @@
         return NO;
     }
     return YES;
-}
-
-- (UIBezierPath *)parseCoordinate:(NSArray *)data
-{
-    UIBezierPath  *path00         = [UIBezierPath new];
-    NSUInteger  countTotal      = [data count];
-    NSUInteger  countCoord      = countTotal/2;
-    BOOL        isFirstPoint    = YES;
-    
-    for(NSUInteger i = 0; i < countCoord; i++)
-    {
-        NSUInteger index = i<<1;
-        CGPoint aPoint = CGPointMake([[data objectAtIndex:index] floatValue],
-                                     [[data objectAtIndex:index+1] floatValue]);
-        
-        if(isFirstPoint)
-        {
-            [path00 moveToPoint:aPoint];
-            isFirstPoint = NO;
-        }
-        
-        [path00 addLineToPoint:aPoint];
-        
-    }
-    
-    [path00 closePath];
-    return path00;
 }
 
 - (bool)checkOpen:(int)col row:(int)row fid:(int)fid

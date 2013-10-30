@@ -11,6 +11,8 @@
 
 #import "AStarItem.h"
 #import "AStar.h"
+#import "Utils.h"
+
 #import "UIImageView+Effects.h"
 
 #define SIZE_RATIO         4.0f
@@ -103,14 +105,20 @@
     
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(2000, 1437), NO, 0);
     
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 20.0);
+//    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 50.0);
     UIBezierPath *p = [UIBezierPath new];
     
     [[UIColor blueColor] setStroke];
+    [p setLineWidth:8.0f];
+    [p setLineJoinStyle:kCGLineJoinRound];
+    [p setLineCapStyle:kCGLineCapRound];
     BOOL isFirst = YES;
-    if (data && [data count] > 0) {
-        for (id obj in data) {
-            if (isFirst) {
+    if (data && [data count] > 0)
+    {
+        for (id obj in data)
+        {
+            if (isFirst)
+            {
                 isFirst = NO;
                 [p moveToPoint:CGPointMake([obj id_col], [obj id_row])];
             }
@@ -152,48 +160,44 @@
 #pragma mark - UITouch
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
     // cancel previous touch ended event
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     
 	CGPoint touchPoint  = [[touches anyObject] locationInView:_mapView];
-    
     NSValue *touchValue = [NSValue valueWithCGPoint:touchPoint];
     
     // perform new one
     [self performSelector:@selector(performTouchTestArea:)
                withObject:touchValue
                afterDelay:0.1];
+    
+    [self performSelector:@selector(performTouchTag:) withObject:touchValue afterDelay:0.1];
 }
 
 - (void)performTouchTestArea:(NSValue *)inTouchPoint
 {
-    CGPoint     aTouchPoint     = [inTouchPoint CGPointValue];
+    CGPoint aTouchPoint = [inTouchPoint CGPointValue];
     
     if ([testMapArea isAreaSelected:aTouchPoint])
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"位置" message:@"百货商场" delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
-        [alert show];
+        [PopoverView showPopoverAtPoint:aTouchPoint inView:_mapView withText:@"百货商场" delegate:self];
     }
-    //    for(MapArea *anArea in areaArray)
-    //    {
-    //        if([anArea isAreaSelected:aTouchPoint])
-    //        {
-    //            if(_delegate != nil
-    //               && [_delegate conformsToProtocol:@protocol(MTImageMapDelegate)]
-    //               && [_delegate
-    //                   respondsToSelector:
-    //                   @selector(imageMapView:didSelectMapArea:)])
-    //            {
-    //                [_delegate
-    //                 imageMapView:self
-    //                 didSelectMapArea:anArea.areaID];
-    //            }
-    //            break;
-    //        }
-    //    }
-    
 }
 
+- (void)performTouchTag:(NSValue *)touchPoint
+{
+    CGPoint aTouchPoint = [touchPoint CGPointValue];
+    
+    UIImage *tag = [UIImage imageNamed:@"tag.png"];
+    
+    CGRect tagRect = CGRectMake(1505 - (tag.size.width / (self.zoomScale*2)), 911 - (tag.size.width / (self.zoomScale)), tag.size.width / self.zoomScale, tag.size.height / self.zoomScale);
+    NSString *strTagPath = [Utils pathStringWithFrame:tagRect];
+    
+    UIBezierPath *tagPath = [Utils bezierPathFromCoordinateString:strTagPath];
+    if (CGPathContainsPoint(tagPath.CGPath,NULL,aTouchPoint,false))
+    {
+        [PopoverView showPopoverAtPoint:[Utils gravityPointInRect:tagRect] inView:_mapView withText:@"起点" delegate:self];
+    }
+}
 
 @end

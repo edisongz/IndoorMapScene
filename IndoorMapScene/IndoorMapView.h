@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopoverView.h"
 
-@interface IndoorMapView : UIScrollView<UIScrollViewDelegate>
+@interface IndoorMapView : UIScrollView<UIScrollViewDelegate, PopoverViewDelegate>
 {
     NSMutableArray *data;
     UIImage *pathImg;
+    
+    UIPopoverController *pop;
 }
 
 @property (nonatomic, strong) UIImageView *mapView;
