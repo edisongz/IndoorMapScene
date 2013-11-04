@@ -30,6 +30,7 @@
 		188EFC79181F952200BAE962 /* UIImageView+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC78181F952200BAE962 /* UIImageView+Effects.m */; };
 		188EFC7B181F95EF00BAE962 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188EFC7A181F95EF00BAE962 /* QuartzCore.framework */; };
 		188EFC7F181FB8F100BAE962 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC7E181FB8F100BAE962 /* Utils.m */; };
+		96DFC01E1827D20700CAEE5B /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DFC01D1827D20700CAEE5B /* CATransform3DPerspect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		188EFC7A181F95EF00BAE962 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		188EFC7D181FB8F100BAE962 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		188EFC7E181FB8F100BAE962 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		96DFC01C1827D20700CAEE5B /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
+		96DFC01D1827D20700CAEE5B /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +223,8 @@
 		188EFC7C181FB8D500BAE962 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				96DFC01C1827D20700CAEE5B /* CATransform3DPerspect.h */,
+				96DFC01D1827D20700CAEE5B /* CATransform3DPerspect.m */,
 				188EFC7D181FB8F100BAE962 /* Utils.h */,
 				188EFC7E181FB8F100BAE962 /* Utils.m */,
 			);
@@ -331,6 +336,7 @@
 				18035532181F574700E0A0DF /* ViewController.m in Sources */,
 				1803552C181F574700E0A0DF /* AppDelegate.m in Sources */,
 				188B029818222D8600D4EEC6 /* PopoverView.m in Sources */,
+				96DFC01E1827D20700CAEE5B /* CATransform3DPerspect.m in Sources */,
 				18035555181F580400E0A0DF /* AStarItem.mm in Sources */,
 				18035528181F574700E0A0DF /* main.m in Sources */,
 				188EFC79181F952200BAE962 /* UIImageView+Effects.m in Sources */,

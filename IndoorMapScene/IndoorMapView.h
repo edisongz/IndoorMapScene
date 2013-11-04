@@ -15,6 +15,9 @@
     UIImage *pathImg;
     
     UIPopoverController *pop;
+    
+    float minScale;
+    BOOL is3DSettingRunning;
 }
 
 @property (nonatomic, strong) UIImageView *mapView;
