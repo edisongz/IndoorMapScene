@@ -7,26 +7,53 @@
 //
 
 #import "AStar.h"
-#import "AStarItem.h"
+
 #import "Utils.h"
+#import "IndoorMapPath.h"
+
+#import "ItemRelation.h"
+
+#define INCREMENT           10
 
 @implementation AStar
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _relationArray = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
 
 - (int)getG:(int)col row:(int)row fid:(int)fid
 {
     //获得该点的g函数值
-	int fx = [(AStarItem *)[close objectAtIndex:fid] id_col];
-	int fy = [(AStarItem *)[close objectAtIndex:fid] id_row];
-	int fg = [(AStarItem *)[close objectAtIndex:fid] id_g];
-	if(fx - col != 0 && fy - row != 0){
+    AStarItem *item = (AStarItem *)[close objectAtIndex:fid];
+    
+	int fx = [item id_col];
+	int fy = [item id_row];
+	int fg = [item id_g];
+    
+	if(fx - col != 0 && fy - row != 0)
+    {
         return fg + 14;
-	}else{
+	}
+    else{
         return fg + 10;
 	}
 }
 
 - (int)getH:(int)col row:(int)row
 {
+    AStarItem *item_dest = [[AStarItem alloc] init];
+    item_dest.id_col = aimCol;
+    item_dest.id_row = aimRow;
+    
+    AStarItem *item_curr = [[AStarItem alloc] init];
+    item_curr.id_col = col;
+    item_curr.id_row = row;
+    
 	return abs(aimCol - col) * 10 + abs(aimRow - row) * 10;
 }
 
@@ -36,6 +63,7 @@
 	AStarItem * temp = (AStarItem *)[open objectAtIndex:1];
     [close addObject:temp];
     [open removeObjectAtIndex:1];
+    
 }
 
 - (void)removeFromOpen
@@ -62,44 +90,220 @@
 		}
         [path insertObject:[close objectAtIndex:[(AStarItem *)[path objectAtIndex:0] id_fid]] atIndex:0];
 	}
+    
 	curCol = aimCol;
 	curRow = aimRow;
 }
 
-- (void)starSearch:(int)fid
+- (void)starSearch:(int)fid withPaths:(NSMutableArray *)paths
 {
-    int col = [(AStarItem *)[close objectAtIndex:fid] id_col];
-	int row = [(AStarItem *)[close objectAtIndex:fid] id_row];
+    AStarItem *lastValidItem = (AStarItem *)[close objectAtIndex:fid];
+//    int col = [(AStarItem *)[close objectAtIndex:fid] id_col];
+//	int row = [(AStarItem *)[close objectAtIndex:fid] id_row];
     
     //搜索目前点的上下左右四个方向
-	int mycol = col;
-	int myrow = row - 5;
-	if(myrow >= 0 && [self checkMap:mycol row:myrow]){
-		if([self checkOpen:mycol row:myrow fid:fid] && [self checkClose:mycol row:myrow]){
+//	int mycol = col;
+//	int myrow = row - INCREMENT;
+//	if(myrow >= 150 && [self checkMap:mycol row:myrow withPaths:paths]){
+//		if([self checkOpen:mycol row:myrow fid:fid] && [self checkClose:mycol row:myrow]){
+//            [self addToOpen:mycol row:myrow fid:fid];
+//		}
+//	}
+//	mycol = col - INCREMENT;
+//	myrow = row;
+//	if(mycol >= 300 && [self checkMap:mycol row:myrow withPaths:paths]){
+//		if([self checkOpen:mycol row:myrow fid:fid] && [self checkClose:mycol row:myrow]){
+//            [self addToOpen:mycol row:myrow fid:fid];
+//		}
+//	}
+//	mycol = col;
+//	myrow = row + INCREMENT;
+//	if(myrow < 1550 && [self checkMap:mycol row:myrow withPaths:paths]){
+//		if([self checkOpen:mycol row:myrow fid:fid] && [self checkClose:mycol row:myrow]){
+//            [self addToOpen:mycol row:myrow fid:fid];
+//		}
+//	}
+//	mycol = col + INCREMENT;
+//	myrow = row;
+//	if(mycol < 1300 && [self checkMap:mycol row:myrow withPaths:paths]){
+//		if([self checkOpen:mycol row:myrow fid:fid] && [self checkClose:mycol row:myrow]){
+//            [self addToOpen:mycol row:myrow fid:fid];
+//		}
+//	}
+    
+    //寻找邻接点（附近的点）
+//    NSMutableArray *points = [self findMinDisTancePoints:lastValidItem count:7];
+    NSMutableArray *points = [self findNeighborPoints:lastValidItem];
+    
+    for (AStarItem *item in points)
+    {
+        
+        int mycol = item.id_col;
+        int myrow = item.id_row;
+        
+        if([self checkOpen:mycol row:myrow fid:fid] &&
+           [self checkClose:mycol row:myrow])
+        {
+            //上一点
+//            NSLog(@"add point to open = (%d, %d)", mycol, myrow);
             [self addToOpen:mycol row:myrow fid:fid];
-		}
-	}
-	mycol = col - 5;
-	myrow = row;
-	if(mycol >= 0 && [self checkMap:mycol row:myrow]){
-		if([self checkOpen:mycol row:myrow fid:fid] && [self checkClose:mycol row:myrow]){
-            [self addToOpen:mycol row:myrow fid:fid];
-		}
-	}
-	mycol = col;
-	myrow = row + 5;
-	if(myrow < 2000 && [self checkMap:mycol row:myrow]){
-		if([self checkOpen:mycol row:myrow fid:fid] && [self checkClose:mycol row:myrow]){
-            [self addToOpen:mycol row:myrow fid:fid];
-		}
-	}
-	mycol = col + 5;
-	myrow = row;
-	if(mycol < 2000 && [self checkMap:mycol row:myrow]){
-		if([self checkOpen:mycol row:myrow fid:fid] && [self checkClose:mycol row:myrow]){
-            [self addToOpen:mycol row:myrow fid:fid];
-		}
-	}
+            
+        }
+        
+    }
+//    NSLog(@"----------------------------------");
+}
+
+///**
+// *  判断线段是否联通
+// */
+//- (BOOL)isLinkedPointFrom:(AStarItem *const)from to:(AStarItem *)to
+//{
+//    BOOL result = YES;
+//    
+//    //直线方程  y = ax + b
+//    CGFloat slope = (from.id_row - to.id_row) / (from.id_col - to.id_col);
+//    CGFloat b = from.id_row - slope * from.id_col;
+//    
+//    int flag = 0; //计算直线与障碍物的交叉次数
+//    
+//    int fromIndex = from.id_col;
+//    int toIndex = to.id_col;
+//    if (fromIndex > toIndex) {
+//        CGFloat temp = fromIndex;
+//        fromIndex = toIndex;
+//        toIndex = temp;
+//    }
+//    
+//    for (int i = fromIndex; i < toIndex; i += 5)
+//    {
+//        CGPoint point = CGPointMake(fromIndex, slope * fromIndex + b);
+//        
+//        if (self.regionArray != nil) {
+//            for (id obj in self.regionArray) {
+//                IndoorMapPath *region = obj;
+//                
+//                if (![obj isEqual:[NSNull null]] && [region isAreaSelected:point]) {
+//                    result = NO;
+//                    flag++;
+//                }
+//            }
+//        }
+//        
+//        if (flag >= 10)//重合次数大于等于10，判断为
+//        {
+//            break;
+//        }
+//    }
+//    
+//    return result;
+//}
+
+///**
+// *  找当前起点最近的n个点
+// *
+// *  @param item
+// *  @param count 个数
+// *
+// *  @return 点集合
+// */
+//- (NSMutableArray *)findMinDisTancePoints:(AStarItem *const)item count:(int)count
+//{
+//    NSMutableArray *points = [[NSMutableArray alloc] init];
+//    
+//    if (self.allPointsArray != nil) {
+//        
+//        HeapSortAStarItem *heapSort = [[HeapSortAStarItem alloc] init];
+//        [heapSort setItemsDistanceWithCurrent:self.allPointsArray current:item];
+//        [heapSort heapSortItems:self.allPointsArray length:self.allPointsArray.count - 1];
+//        
+//        for (int i = 0; i < count; i++) {
+//            
+//            if (i < self.allPointsArray.count)
+//            {
+//                AStarItem *itemMin = [self.allPointsArray objectAtIndex:i];
+//                if (itemMin.distanceOfItem != 0.0) {
+//                    [points addObject:itemMin];
+//                }
+//            }
+//            
+//        }
+//        
+//    }
+//    
+//    return points;
+//}
+
+/**
+ *  找到最近的路径点
+ */
+- (AStarItem *)findNearestPoint:(int)col row:(int)row
+{
+    AStarItem *astar = [[AStarItem alloc] init];
+    
+    if (self.allPointsArray != nil) {
+        
+        CGFloat min = FLT_MAX;
+        for (AStarItem *item in self.allPointsArray) {
+            
+            CGFloat distance = sqrtf(pow((col - item.id_col), 2) + pow((row - item.id_row), 2));
+            if (distance < min) {
+                min = distance;
+                astar = item;
+            }
+        }
+        
+    }
+    
+    return astar;
+}
+
+/**
+ *  找出邻接点
+ *
+ *  @param item 该店的邻接点
+ *
+ *  @return 邻接点集合
+ */
+- (NSMutableArray *)findNeighborPoints:(AStarItem *const)item
+{
+    NSMutableArray *points = [[NSMutableArray alloc] init];
+    
+    if (self.relationArray != nil) {
+        
+        for (ItemRelation *relation in self.relationArray) {
+            
+            if (item.id_col == relation.point1.col && item.id_row == relation.point1.row)//同一点
+            {
+                //如果有一个相等，另一个就是邻接点
+                AStarItem *item = [[AStarItem alloc] init];
+                [item setPos:relation.point2.col row:relation.point2.row];
+                [points addObject:item];
+                continue;
+            }
+            
+            if (item.id_col == relation.point2.col && item.id_row == relation.point2.row)//同一点
+            {
+                //如果有一个相等，另一个就是邻接点
+                AStarItem *item = [[AStarItem alloc] init];
+                [item setPos:relation.point1.col row:relation.point1.row];
+                [points addObject:item];
+                continue;
+            }
+            
+        }
+        
+    }
+    
+    return points;
+}
+
+/**
+ *  两点之间的距离
+ */
+- (CGFloat)distanceOfTwoPointsFrom:(AStarItem *)from to:(AStarItem *)to
+{
+    return sqrtf(pow((from.id_col - to.id_col), 2) + pow((from.id_row - to.id_row), 2));
 }
 
 - (void)resetSort:(int)last
@@ -115,13 +319,13 @@
 	}
 }
 
-- (bool)checkClose:(int)col row:(int)row
+- (BOOL)checkClose:(int)col row:(int)row
 {
     //检查close列表
-	for(int i = [close count] - 1;i > 0;i --)
+	for(int i = [close count] - 1;i >= 0;i --)
     {
         if([(AStarItem *)[close objectAtIndex:i] id_col] == col && [(AStarItem *)[close objectAtIndex:i] id_row] == row){
-            return false;
+            return NO;
 		}
 	}
     return YES;
@@ -143,55 +347,28 @@
     [self resetSort:[open count] - 1];
 }
 
-- (bool)checkMap:(int)col row:(int)row
+- (BOOL)checkMap:(int)col row:(int)row withPaths:(NSMutableArray *)paths
 {
+    if (paths == nil) {
+        return NO;
+    }
+    BOOL result = YES;
     CGPoint point = CGPointMake(col, row);
     
-    NSString *obstacle00 = @"1524,901,1584,901,1583,1048,1552,1048,1551,955,1523,953";
-    NSString *obstacle01 = @"1520,760,1583,760,1583,871,1520,871";
-    NSString *obstacle02 = @"1609,763,1629,764,1630,865,1611,867";
-    NSString *obstacle03 = @"1667,764,1749,764,1750,694,1776,695,1777,786,1698,786,1698,901,1668,901";
-    NSString *obstacle04 = @"1610,670,1718,670,1718,729,1610,729";
-    NSString *obstacle05 = @"1667,764,1749,764,1750,694,1776,695,1777,786,1698,786,1698,901,1668,901";
-    NSString *obstacle06 = @"1497,700,1580,700,1580,740,1497,740";
-    
-    UIBezierPath  *path00 = [Utils bezierPathFromCoordinateString:obstacle00];
-    UIBezierPath  *path01 = [Utils bezierPathFromCoordinateString:obstacle01];
-    UIBezierPath  *path02 = [Utils bezierPathFromCoordinateString:obstacle02];
-    UIBezierPath  *path03 = [Utils bezierPathFromCoordinateString:obstacle03];
-    UIBezierPath  *path04 = [Utils bezierPathFromCoordinateString:obstacle04];
-    UIBezierPath  *path05 = [Utils bezierPathFromCoordinateString:obstacle05];
-    UIBezierPath  *path06 = [Utils bezierPathFromCoordinateString:obstacle06];
-    
-    if (CGPathContainsPoint(path00.CGPath,NULL,point,false))
-    {
-        return NO;
+    for (id obj in paths) {
+        if ([obj isKindOfClass:[IndoorMapPath class]]) {
+            IndoorMapPath *indoorPath = obj;
+            if (CGPathContainsPoint(indoorPath.mapArea.CGPath, NULL, point, false)) {
+                result = NO;
+                continue;
+            }
+        }else{
+
+            result = YES;
+            break;
+        }
     }
-    else if (CGPathContainsPoint(path01.CGPath,NULL,point,false))
-    {
-        return NO;
-    }
-    else if (CGPathContainsPoint(path02.CGPath,NULL,point,false))
-    {
-        return NO;
-    }
-    else if (CGPathContainsPoint(path03.CGPath,NULL,point,false))
-    {
-        return NO;
-    }
-    else if (CGPathContainsPoint(path04.CGPath,NULL,point,false))
-    {
-        return NO;
-    }
-    else if (CGPathContainsPoint(path05.CGPath,NULL,point,false))
-    {
-        return NO;
-    }
-    else if (CGPathContainsPoint(path06.CGPath,NULL,point,false))
-    {
-        return NO;
-    }
-    return YES;
+    return result;
 }
 
 - (bool)checkOpen:(int)col row:(int)row fid:(int)fid
@@ -214,8 +391,9 @@
     return YES;
 }
 
-- (NSMutableArray *)findPath:(int)curX curY:(int)curY aimX:(int)aimX aimY:(int)aimY
+- (NSMutableArray *)findPath:(int)curX curY:(int)curY aimX:(int)aimX aimY:(int)aimY withPath:(NSMutableArray *)paths
 {
+    
     //参数以及记录路径数组初始化
 	curCol = curX;
     curRow = curY;
@@ -235,7 +413,10 @@
     [temp1 setId_f:ag];
     [open addObject:temp1];
     
-    close = [[NSMutableArray alloc] init];
+    if (close == nil) {
+        close = [[NSMutableArray alloc] init];
+    }
+    [close removeAllObjects];
 	
     //遍历寻找路径
 	while([open count] > 1)
@@ -243,8 +424,8 @@
         [self fromOpenToClose];//open和close列表管理
         int fatherid = [close count] - 1;
         
-        if(abs(aimCol - [(AStarItem *)[close objectAtIndex:fatherid] id_col]) <= 10
-		   && abs(aimRow - [(AStarItem *)[close objectAtIndex:fatherid] id_row]) <= 10)
+        if(abs(aimCol - [(AStarItem *)[close objectAtIndex:fatherid] id_col]) <= 5
+		   && abs(aimRow - [(AStarItem *)[close objectAtIndex:fatherid] id_row]) <= 5)
         {
             [self getPath];
             break;
@@ -252,9 +433,10 @@
         else
         {
             //搜索
-            [self starSearch:fatherid];
+            [self starSearch:fatherid withPaths:paths];
         }
 	}
+    
     [open removeAllObjects];
     [close removeAllObjects];
     //获得路径

@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "IndoorMapView.h"
 
 @interface ViewController ()
 
@@ -19,9 +18,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    IndoorMapView *mapView = [[IndoorMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-    
-    [self.view addSubview:mapView];
+//    IndoorMapView *mapView = [[IndoorMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+//    
+//    [self.view addSubview:mapView];
 }
 
 - (void)didReceiveMemoryWarning

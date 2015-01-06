@@ -17,6 +17,11 @@
 @property (nonatomic, assign) int id_fid;
 @property (nonatomic, assign) int id_f;
 
+@property (nonatomic, assign) CGFloat distanceOfItem;
+
+@property (nonatomic, assign) CGPoint point1;
+@property (nonatomic, assign) CGPoint point2;
+
 - (void)setPos:(int)col row:(int)row;
 
 @end
