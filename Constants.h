@@ -46,7 +46,7 @@
 #define FACILITY_IMAGE_PAYMENT_CENTER                   [UIImage imageNamed:@"收银台.png"]
 
 #define OFFSET_X                                        .0f
-#define OFFSET_Y                                        0.0f
+#define OFFSET_Y                                        85.0f
 #define RATIO                                           (320.0f / 12.0f) * 1.0f
 #define MAP_HEIGHT                                      10.0f
 

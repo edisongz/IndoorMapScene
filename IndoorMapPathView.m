@@ -44,18 +44,22 @@
     CGContextSetAllowsAntialiasing(context, TRUE);
     CGContextSetShouldAntialias(context, true);
     
+    //图片大小458*404
+    //转化成可绘制坐标
+    CGFloat x_ratio = 320 / 458.0f;
+    CGFloat y_ratio = MRScreenHeight / 404.f * 0.63;
     if (newPaths) {
         int j = 0;
         
         for (AStarItem *item in newPaths) {
             if (j == 0)
             {
-                CGContextMoveToPoint(context, item.id_col, item.id_row);  // 开始坐标右边开始
+                CGContextMoveToPoint(context, item.id_col * x_ratio, item.id_row * y_ratio + offset_y);  // 开始坐标右边开始
                 j++;
                 continue;
             }
             
-            CGContextAddLineToPoint(context, item.id_col, item.id_row);
+            CGContextAddLineToPoint(context, item.id_col * x_ratio, item.id_row * y_ratio + offset_y);
             
         }
         
