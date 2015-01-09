@@ -273,21 +273,22 @@
         
         for (ItemRelation *relation in self.relationArray) {
             
+//            NSLog(@"(%d, %d)-(%d, %d)", relation.point1.col, relation.point1.row, relation.point2.col, relation.point2.row);
             if (item.id_col == relation.point1.col && item.id_row == relation.point1.row)//同一点
             {
                 //如果有一个相等，另一个就是邻接点
-                AStarItem *item = [[AStarItem alloc] init];
-                [item setPos:relation.point2.col row:relation.point2.row];
-                [points addObject:item];
+                AStarItem *item1 = [[AStarItem alloc] init];
+                [item1 setPos:relation.point2.col row:relation.point2.row];
+                [points addObject:item1];
                 continue;
             }
             
             if (item.id_col == relation.point2.col && item.id_row == relation.point2.row)//同一点
             {
                 //如果有一个相等，另一个就是邻接点
-                AStarItem *item = [[AStarItem alloc] init];
-                [item setPos:relation.point1.col row:relation.point1.row];
-                [points addObject:item];
+                AStarItem *item2 = [[AStarItem alloc] init];
+                [item2 setPos:relation.point1.col row:relation.point1.row];
+                [points addObject:item2];
                 continue;
             }
             
@@ -374,7 +375,7 @@
 - (bool)checkOpen:(int)col row:(int)row fid:(int)fid
 {
     //检查open列表中是否有更小的步长，并排序
-	for(int i = [open count] - 1;i > 0;i --)
+	for(NSUInteger i = [open count] - 1;i > 0;i --)
     {
 		if([(AStarItem *)[open objectAtIndex:i] id_col] == col && [(AStarItem *)[open objectAtIndex:i] id_row] == row){
 		    int tempG = [self getG:col row:row fid:fid];
@@ -422,10 +423,10 @@
 	while([open count] > 1)
     {
         [self fromOpenToClose];//open和close列表管理
-        int fatherid = [close count] - 1;
+        NSUInteger fatherid = [close count] - 1;
         
-        if(abs(aimCol - [(AStarItem *)[close objectAtIndex:fatherid] id_col]) <= 5
-		   && abs(aimRow - [(AStarItem *)[close objectAtIndex:fatherid] id_row]) <= 5)
+        if(abs(aimCol - [(AStarItem *)[close objectAtIndex:fatherid] id_col]) <= 3
+		   && abs(aimRow - [(AStarItem *)[close objectAtIndex:fatherid] id_row]) <= 3)
         {
             [self getPath];
             break;

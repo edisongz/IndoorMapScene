@@ -7,8 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "IndoorMapScrollView.h"
+
+#import "Constants.h"
 
 @interface ViewController ()
+{
+    IndoorMapScrollView *indoorMapScrollView;
+}
 
 @end
 
@@ -18,9 +24,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-//    IndoorMapView *mapView = [[IndoorMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-//    
-//    [self.view addSubview:mapView];
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    indoorMapScrollView = [[IndoorMapScrollView alloc] initWithFrame:CGRectMake(0, 0.0f, MRScreenWidth, MRScreenHeight)];
+    [self.view addSubview:indoorMapScrollView];
+    
+    [indoorMapScrollView findShortestPath:CGPointMake(113.0f, 70.0f) end:CGPointMake(300, 389) filePath:@"map1_path_data"];
+    
 }
 
 - (void)didReceiveMemoryWarning

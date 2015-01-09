@@ -9,6 +9,9 @@
 #ifndef IndoorMapScene_Constants_h
 #define IndoorMapScene_Constants_h
 
+#define MRScreenWidth                                   CGRectGetWidth([UIScreen mainScreen].applicationFrame)
+#define MRScreenHeight                                  CGRectGetHeight([UIScreen mainScreen].applicationFrame)
+
 #define SHOP_TYPE_UNKNOWN                               0
 #define SHOP_TYPE_MAIN                                  1
 #define SHOP_TYPE_LIFE                                  2

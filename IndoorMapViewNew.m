@@ -40,7 +40,7 @@
         // Initialization code
         self.backgroundColor = RGBA(235.0f, 235.0f, 226.0f, 1);
         
-        UIImage *floorImage = [UIImage imageNamed:@"L1.png"];
+        UIImage *floorImage = [UIImage imageNamed:@"map1.png"];
         _mapView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _mapView.image = floorImage;
         _mapView.center = CGPointMake(frame.size.width * 0.5f, frame.size.height * 0.5f);
@@ -277,7 +277,7 @@
 - (NSMutableArray *)fetchPathPoint:(NSString *)filePath
 {
     NSMutableArray *results = [[NSMutableArray alloc] init];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"L1_points_pair" ofType:@"txt"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"map1_path_data" ofType:@"txt"];
     
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
     
@@ -286,6 +286,12 @@
     while ((lineData = [fileHandle readLineWithDelimiter:@"\n"]))
     {
         NSString *lineString = [[NSString alloc] initWithData:lineData encoding:NSUTF8StringEncoding];
+        
+        //#号为注释
+        if ([lineString characterAtIndex:0] == '#')
+        {
+            continue;
+        }
         NSString *replaceStr = [lineString stringByReplacingOccurrencesOfString:@"(" withString:@"{"];
         NSString *replaceStr1 = [replaceStr stringByReplacingOccurrencesOfString:@")" withString:@"}"];
         
@@ -327,9 +333,16 @@
     while ((lineData = [fileHandle readLineWithDelimiter:@"\n"]))
     {
         NSString *lineString = [[NSString alloc] initWithData:lineData encoding:NSUTF8StringEncoding];
+        
+        //#号为注释
+        if ([lineString characterAtIndex:0] == '#')
+        {
+            continue;
+        }
         NSString *replaceStr = [lineString stringByReplacingOccurrencesOfString:@"(" withString:@"{"];
         NSString *replaceStr1 = [replaceStr stringByReplacingOccurrencesOfString:@")" withString:@"}"];
         
+        NSLog(@"%@", lineString);
         NSArray *array = [replaceStr1 componentsSeparatedByString:@"-"];
         if (array) {
             
@@ -349,10 +362,10 @@
                 CGPoint point = CGPointFromString(pointStr);
                 
                 //转换坐标系
-                point.y = 760 - point.y;
-                
-                point.x = (point.x / 100.0f  - OFFSET_X) * RATIO;
-                point.y = (MAP_HEIGHT - point.y / 100.0f) * RATIO + _offset_y;
+//                point.y = 760 - point.y;
+//                
+//                point.x = (point.x / 100.0f  - OFFSET_X) * RATIO;
+//                point.y = (MAP_HEIGHT - point.y / 100.0f) * RATIO + _offset_y;
                 
                 if (i == 0)
                 {
@@ -381,10 +394,10 @@
         CGPoint point = CGPointFromString(pointStr);
         
         //转换坐标系
-        point.y = 760 - point.y;
-        
-        point.x = (point.x / 100.0f  - OFFSET_X) * RATIO;
-        point.y = (MAP_HEIGHT - point.y / 100.0f) * RATIO + _offset_y;
+//        point.y = 760 - point.y;
+//        
+//        point.x = (point.x / 100.0f  - OFFSET_X) * RATIO;
+//        point.y = (MAP_HEIGHT - point.y / 100.0f) * RATIO + _offset_y;
         
         [item setPos:point.x row:point.y];
         
@@ -410,16 +423,19 @@
     NSMutableArray *pathsArray = [[NSMutableArray alloc] init];
     
     //转换成与路径点相同的坐标系
-    CGFloat x_start = startX * 100;
-    CGFloat y_start = startY * 100;
-    CGFloat x_end = endX * 100;
-    CGFloat y_end = endY * 100;
+    CGFloat x_start = startX;
+    CGFloat y_start = startY;
+    CGFloat x_end = endX;
+    CGFloat y_end = endY;
     
+    //图片大小458*404
     //转化成可绘制坐标
-    x_start = (x_start / 100.0f  - OFFSET_X) * RATIO;
-    y_start = (MAP_HEIGHT - y_start / 100.0f) * RATIO + _offset_y;
-    x_end = (x_end / 100.0f  - OFFSET_X) * RATIO;
-    y_end = (MAP_HEIGHT - y_end / 100.0f) * RATIO + _offset_y;
+//    CGFloat x_ratio = 320 / 458.0f;
+//    CGFloat y_ratio = _mapView.frame.size.height / 404.f;
+//    x_start = x_start * x_ratio;
+//    y_start = y_start * y_ratio;// + _offset_y;
+//    x_end = x_end * x_ratio;
+//    y_end = y_end * y_ratio;// + _offset_y;
     
 //    NSLog(@"start----->(%f, %f)", x_start, y_start);
     

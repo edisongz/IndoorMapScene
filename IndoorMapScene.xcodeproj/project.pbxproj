@@ -30,6 +30,10 @@
 		188EFC7B181F95EF00BAE962 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188EFC7A181F95EF00BAE962 /* QuartzCore.framework */; };
 		188EFC7F181FB8F100BAE962 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC7E181FB8F100BAE962 /* Utils.m */; };
 		96DFC01E1827D20700CAEE5B /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DFC01D1827D20700CAEE5B /* CATransform3DPerspect.m */; };
+		B759C6591A5EBB6A003C09B2 /* L1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B759C6581A5EBB6A003C09B2 /* L1.txt */; };
+		B7823D461A5ED6BC0099BCDB /* map1_points.png in Resources */ = {isa = PBXBuildFile; fileRef = B7823D451A5ED6BC0099BCDB /* map1_points.png */; };
+		B7AB10FE1A6036A000AA0AC1 /* map1_path_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = B7AB10FD1A6036A000AA0AC1 /* map1_path_data.txt */; };
+		B7B282931A5D7356003C1FE6 /* map1.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B282921A5D7356003C1FE6 /* map1.png */; };
 		B7B6931C1A5C35F4002F72BB /* IndoorMapPath.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693151A5C35F4002F72BB /* IndoorMapPath.m */; };
 		B7B6931D1A5C35F4002F72BB /* IndoorMapPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693171A5C35F4002F72BB /* IndoorMapPathView.m */; };
 		B7B6931E1A5C35F4002F72BB /* IndoorMapScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693191A5C35F4002F72BB /* IndoorMapScrollView.m */; };
@@ -94,6 +98,10 @@
 		188EFC7E181FB8F100BAE962 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		96DFC01C1827D20700CAEE5B /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
 		96DFC01D1827D20700CAEE5B /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
+		B759C6581A5EBB6A003C09B2 /* L1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = L1.txt; sourceTree = "<group>"; };
+		B7823D451A5ED6BC0099BCDB /* map1_points.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map1_points.png; sourceTree = "<group>"; };
+		B7AB10FD1A6036A000AA0AC1 /* map1_path_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map1_path_data.txt; sourceTree = "<group>"; };
+		B7B282921A5D7356003C1FE6 /* map1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map1.png; sourceTree = "<group>"; };
 		B7B693141A5C35F4002F72BB /* IndoorMapPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndoorMapPath.h; sourceTree = "<group>"; };
 		B7B693151A5C35F4002F72BB /* IndoorMapPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndoorMapPath.m; sourceTree = "<group>"; };
 		B7B693161A5C35F4002F72BB /* IndoorMapPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndoorMapPathView.h; sourceTree = "<group>"; };
@@ -250,8 +258,12 @@
 		1803555D181F59A500E0A0DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B759C6581A5EBB6A003C09B2 /* L1.txt */,
 				1803555E181F59B000E0A0DF /* floor1.jpg */,
 				1803555F181F59B000E0A0DF /* tag.png */,
+				B7B282921A5D7356003C1FE6 /* map1.png */,
+				B7823D451A5ED6BC0099BCDB /* map1_points.png */,
+				B7AB10FD1A6036A000AA0AC1 /* map1_path_data.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -385,6 +397,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = apple;
 				TargetAttributes = {
+					18035517181F574700E0A0DF = {
+						DevelopmentTeam = 36E8224422;
+					};
 					18035538181F574700E0A0DF = {
 						TestTargetID = 18035517181F574700E0A0DF;
 					};
@@ -414,10 +429,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B759C6591A5EBB6A003C09B2 /* L1.txt in Resources */,
 				B7B693591A5C3C54002F72BB /* SVProgressHUD.bundle in Resources */,
+				B7B282931A5D7356003C1FE6 /* map1.png in Resources */,
 				18035561181F59B000E0A0DF /* tag.png in Resources */,
 				18035534181F574700E0A0DF /* Images.xcassets in Resources */,
 				18035526181F574700E0A0DF /* InfoPlist.strings in Resources */,
+				B7AB10FE1A6036A000AA0AC1 /* map1_path_data.txt in Resources */,
+				B7823D461A5ED6BC0099BCDB /* map1_points.png in Resources */,
 				18035560181F59B000E0A0DF /* floor1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,7 +33,7 @@
         self.showsVerticalScrollIndicator = NO;
         self.clearsContextBeforeDrawing = YES;
         
-        _mapViewNew = [[IndoorMapViewNew alloc] initWithFrame:CGRectMake(0, 0, 1.0f*frame.size.width, frame.size.height * 1.0f)];
+        _mapViewNew = [[IndoorMapViewNew alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _mapViewNew.userInteractionEnabled = YES;
         _mapViewNew.delegate = self;
         [self addSubview:_mapViewNew];
@@ -156,7 +156,7 @@
                  isStart:(BOOL)isStart
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path = [mainBundle pathForResource:position.floorNo ofType:@"mif"];
+    NSString *path = [mainBundle pathForResource:position.floorNo ofType:@"txt"];
     [self loadMapInfoFile:path position:position isStart:isStart];
 }
 
@@ -165,7 +165,7 @@
                       isStart:(BOOL)isStart
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path = [mainBundle pathForResource:endPos.floorNo ofType:@"mif"];
+    NSString *path = [mainBundle pathForResource:endPos.floorNo ofType:@"txt"];
     [self loadMapInfoFile:path startPos:startPos endPos:endPos isStart:isStart];
 }
 
@@ -173,7 +173,7 @@
                      endPos:(MyPositon *)endPos
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path = [mainBundle pathForResource:endPos.floorNo ofType:@"mif"];
+    NSString *path = [mainBundle pathForResource:endPos.floorNo ofType:@"txt"];
     [self loadMapInfoForSameFloor:path startPos:startPos endPos:endPos];
 }
 
@@ -183,7 +183,7 @@
                  isStart:(BOOL)isStart
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path = [mainBundle pathForResource:position.floorNo ofType:@"mif"];
+    NSString *path = [mainBundle pathForResource:position.floorNo ofType:@"txt"];
     [self loadMapInfoFile:path position:position paymentCenter:pPosition isStart:isStart];
 }
 
@@ -193,7 +193,7 @@
                       isStart:(BOOL)isStart
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path = [mainBundle pathForResource:endPos.floorNo ofType:@"mif"];
+    NSString *path = [mainBundle pathForResource:endPos.floorNo ofType:@"txt"];
     [self loadMapInfoFile:path startPos:startPos endPos:endPos paymentCenter:pPosition isStart:isStart];
 }
 
@@ -201,7 +201,7 @@
                 paymentCenter:(MyPositon *)pPosition
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path = [mainBundle pathForResource:floorNo ofType:@"mif"];
+    NSString *path = [mainBundle pathForResource:floorNo ofType:@"txt"];
     [self loadMapInfoFile:path paymentCenter:pPosition];
 //    [self loadMapInfoFile:path startPos:startPos endPos:endPos paymentCenter:pPosition isStart:isStart];
 }
@@ -211,7 +211,7 @@
                           paymentCenter:(MyPositon *)pPosition
 {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *path = [mainBundle pathForResource:endPos.floorNo ofType:@"mif"];
+    NSString *path = [mainBundle pathForResource:endPos.floorNo ofType:@"txt"];
     [self loadMapInfoForSameFloorWithElevator:path startPos:startPos endPos:endPos paymentCenter:pPosition];
 }
 
@@ -721,9 +721,9 @@
     [self didDisplayPopoverView:_selectedPoint];
 }
 
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
 {
-    [self didDisplayFacilitiesAtScale:scale];
+//    [self didDisplayFacilitiesAtScale:scale];
 //    [self didDisplayPopoverView:_selectedPoint];
     
     [scrollView setZoomScale:scale animated:NO];
@@ -1117,6 +1117,22 @@
 - (void)findPathTest:(NSString *)filePath
 {
     NSMutableArray *paths = [_mapViewNew findPathStartX:_myPosition.point.x statY:_myPosition.point.y endX:minDistancePoint.point.x endY:minDistancePoint.point.y filePath:filePath];
+    [_mapViewNew drawPaths:paths];
+}
+
+- (void)findShortestPath:(CGPoint)start
+                     end:(CGPoint)end
+                filePath:(NSString *)filePath
+{
+    NSMutableArray *paths = [[NSMutableArray alloc] init];
+    
+    NSMutableArray *path1 = [_mapViewNew findPathStartX:start.x
+                                                  statY:start.y
+                                                   endX:end.x
+                                                   endY:end.y
+                                               filePath:filePath];
+    [paths addObjectsFromArray:path1];
+    
     [_mapViewNew drawPaths:paths];
 }
 

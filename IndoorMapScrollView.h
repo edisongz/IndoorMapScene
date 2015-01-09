@@ -105,6 +105,13 @@ typedef void(^AnimationCompletion)();
 - (void)findPathTest:(NSString *)filePath;
 
 /**
+ *  两点之间最短距离
+ */
+- (void)findShortestPath:(CGPoint)start
+                     end:(CGPoint)end
+                filePath:(NSString *)filePath;
+
+/**
  *  人，车，缴费中心同一层，获取路径
  */
 - (void)findPathSameFloor:(CGPoint)start
