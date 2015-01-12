@@ -50,6 +50,7 @@
 		B7B693591A5C3C54002F72BB /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7B693561A5C3C54002F72BB /* SVProgressHUD.bundle */; };
 		B7B6935A1A5C3C54002F72BB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693581A5C3C54002F72BB /* SVProgressHUD.m */; };
 		B7FEE67E1A642D92005DAFE5 /* shop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FEE67D1A642D92005DAFE5 /* shop@2x.png */; };
+		B7FEE6811A6432DC005DAFE5 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FEE6801A6432DC005DAFE5 /* path.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		B7B693571A5C3C54002F72BB /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		B7B693581A5C3C54002F72BB /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		B7FEE67D1A642D92005DAFE5 /* shop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop@2x.png"; sourceTree = "<group>"; };
+		B7FEE6801A6432DC005DAFE5 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 		1803555D181F59A500E0A0DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B7FEE6801A6432DC005DAFE5 /* path.png */,
 				B7FEE67D1A642D92005DAFE5 /* shop@2x.png */,
 				B759C6581A5EBB6A003C09B2 /* L1.txt */,
 				1803555E181F59B000E0A0DF /* floor1.jpg */,
@@ -429,6 +432,7 @@
 			files = (
 				B759C6591A5EBB6A003C09B2 /* L1.txt in Resources */,
 				B7B693591A5C3C54002F72BB /* SVProgressHUD.bundle in Resources */,
+				B7FEE6811A6432DC005DAFE5 /* path.png in Resources */,
 				B7B282931A5D7356003C1FE6 /* map1.png in Resources */,
 				18035561181F59B000E0A0DF /* tag.png in Resources */,
 				18035534181F574700E0A0DF /* Images.xcassets in Resources */,
