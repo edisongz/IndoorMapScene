@@ -8,7 +8,7 @@ Welcome to the IndoorMapScene wiki!
 #### 寻找路线方式改为邻接结点通过A*方式寻路线，比旧版本方便快捷。
 ![points map](https://github.com/edisongz/IndoorMapScene/blob/master/map1_points.png)
 #### 路径结果图：
-
+![结果](https://github.com/edisongz/IndoorMapScene/blob/master/path.png)
 
 #### 对应的邻接结点组成的无向图用于规划路线，A*通过寻找邻接结点快速找到最短路径。
 ##### 结点数据：
