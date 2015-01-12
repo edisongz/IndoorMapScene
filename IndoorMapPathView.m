@@ -47,7 +47,13 @@
     //图片大小458*404
     //转化成可绘制坐标
     CGFloat x_ratio = 320 / 458.0f;
-    CGFloat y_ratio = MRScreenHeight / 404.f * 0.63;
+    
+    CGFloat h_ratio = 0.63;
+    if (IS_IPHONE_5) {
+        h_ratio = 0.52f;
+        offset_y += 46.0f;
+    }
+    CGFloat y_ratio = MRScreenHeight / 404.f * h_ratio;
     if (newPaths) {
         int j = 0;
         

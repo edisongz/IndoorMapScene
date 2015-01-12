@@ -505,7 +505,6 @@
 }
 
 #pragma mark - draw something
-
 /**
  *  画设施
  **/
@@ -1098,9 +1097,20 @@
     //弹出pop，提示是缴费中心
     popover.hidden = NO;
     [self bringSubviewToFront:popover];
-    [popover setTitle:@"缴费中心" subTitle:@"先缴费，后提车"];
-    popover.center = CGPointMake((position.point.x - OFFSET_X) * RATIO * scale, (MAP_HEIGHT - position.point.y)* RATIO * scale + _offset_y * scale - 20.0f);
-    _touchPoint = CGPointMake((position.point.x - OFFSET_X) * RATIO * scale, (MAP_HEIGHT - position.point.y)* RATIO * scale + _offset_y * scale);
+    [popover setTitle:@"起点" subTitle:@"先缴费，后提车"];
+//    popover.center = position.point;//CGPointMake((position.point.x - OFFSET_X) * RATIO * scale, (MAP_HEIGHT - position.point.y)* RATIO * scale + _offset_y * scale - 20.0f);
+    
+    CGFloat x_ratio = 320 / 458.0f;
+    CGFloat offset_y = OFFSET_Y;
+    CGFloat h_ratio = 0.63;
+    if (IS_IPHONE_5) {
+        h_ratio = 0.52f;
+        offset_y += 46.0f;
+    }
+    CGFloat y_ratio = MRScreenHeight / 404.f * h_ratio;
+    popover.center = CGPointMake(position.point.x * x_ratio, position.point.y * y_ratio + offset_y);
+    
+    _touchPoint = position.point;
 }
 
 /**

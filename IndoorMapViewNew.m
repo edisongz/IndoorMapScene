@@ -206,25 +206,6 @@
         
     }
     
-//    if (newPath) {
-//        int j = 0;
-//        
-//        for (AStarItem *item in newPath) {
-//            if (j == 0)
-//            {
-//                CGContextMoveToPoint(context, item.id_col, item.id_row);  // 开始坐标右边开始
-//                j++;
-//                continue;
-//            }
-//            
-//            CGContextAddLineToPoint(context, item.id_col, item.id_row);
-//            
-//        }
-//        
-//        CGContextSetLineWidth(context, 1.0f);
-//        CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);//线框颜色
-//        CGContextStrokePath(context);
-//    }
 }
 
 #pragma mark - UITouch
@@ -299,12 +280,9 @@
         CGPoint point = CGPointFromString(replaceStr1);
         point.x = point.x;
         point.y = (760 - point.y);
-//        NSLog(@"point = (%f, %f)", point.x, point.y);
         
         point.x = (point.x / 100.0f  - OFFSET_X) * RATIO;
         point.y = (MAP_HEIGHT - point.y / 100.0f) * RATIO + _offset_y;
-        
-//        NSLog(@"point = (%f, %f)", point.x, point.y);
         
         AStarItem *item = [[AStarItem alloc] init];
         [item setPos:point.x row:point.y];
@@ -342,7 +320,6 @@
         NSString *replaceStr = [lineString stringByReplacingOccurrencesOfString:@"(" withString:@"{"];
         NSString *replaceStr1 = [replaceStr stringByReplacingOccurrencesOfString:@")" withString:@"}"];
         
-        NSLog(@"%@", lineString);
         NSArray *array = [replaceStr1 componentsSeparatedByString:@"-"];
         if (array) {
             
@@ -470,41 +447,5 @@
     //绘制路线
     [pathView drawPathWithPoints:path];
 }
-
-//- (UIImage *)createImageFromPoints:(NSMutableArray *)paths
-//{
-//    UIImage *image = nil;
-//    UIGraphicsBeginImageContext(pathImageView.frame.size);
-//    
-//    UIBezierPath *path = [UIBezierPath new];
-//    [path setLineWidth:1];
-//    [path setLineJoinStyle:kCGLineJoinRound];
-//    [path setLineCapStyle:kCGLineCapRound];
-//    [[UIColor redColor] setStroke];
-//    
-//    if (paths) {
-//        int j = 0;
-//        
-//        for (AStarItem *item in paths) {
-//            if (j == 0)
-//            {
-//                [path moveToPoint:CGPointMake(item.id_col, item.id_row)];
-////                CGContextMoveToPoint(context, item.id_col, item.id_row);  // 开始坐标右边开始
-//                j++;
-//                continue;
-//            }
-//            
-//            [path addLineToPoint:CGPointMake(item.id_col, item.id_row)];
-////            CGContextAddLineToPoint(context, item.id_col, item.id_row);
-//            
-//        }
-//        [path stroke];
-//    }
-//    
-//    image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    
-//    return image;
-//}
 
 @end

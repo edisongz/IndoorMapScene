@@ -25,7 +25,6 @@
 		18035559181F584300E0A0DF /* MapArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 18035558181F584300E0A0DF /* MapArea.m */; };
 		18035560181F59B000E0A0DF /* floor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1803555E181F59B000E0A0DF /* floor1.jpg */; };
 		18035561181F59B000E0A0DF /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 1803555F181F59B000E0A0DF /* tag.png */; };
-		188B029818222D8600D4EEC6 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188B029718222D8600D4EEC6 /* PopoverView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		188EFC79181F952200BAE962 /* UIImageView+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC78181F952200BAE962 /* UIImageView+Effects.m */; };
 		188EFC7B181F95EF00BAE962 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188EFC7A181F95EF00BAE962 /* QuartzCore.framework */; };
 		188EFC7F181FB8F100BAE962 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC7E181FB8F100BAE962 /* Utils.m */; };
@@ -50,6 +49,7 @@
 		B7B693541A5C3BD2002F72BB /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693531A5C3BD2002F72BB /* Shop.m */; };
 		B7B693591A5C3C54002F72BB /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7B693561A5C3C54002F72BB /* SVProgressHUD.bundle */; };
 		B7B6935A1A5C3C54002F72BB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693581A5C3C54002F72BB /* SVProgressHUD.m */; };
+		B7FEE67E1A642D92005DAFE5 /* shop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FEE67D1A642D92005DAFE5 /* shop@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +89,6 @@
 		18035558181F584300E0A0DF /* MapArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapArea.m; sourceTree = "<group>"; };
 		1803555E181F59B000E0A0DF /* floor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floor1.jpg; sourceTree = "<group>"; };
 		1803555F181F59B000E0A0DF /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
-		188B029618222D8600D4EEC6 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
-		188B029718222D8600D4EEC6 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
 		188EFC77181F952200BAE962 /* UIImageView+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Effects.h"; sourceTree = "<group>"; };
 		188EFC78181F952200BAE962 /* UIImageView+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Effects.m"; sourceTree = "<group>"; };
 		188EFC7A181F95EF00BAE962 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -134,6 +132,7 @@
 		B7B693561A5C3C54002F72BB /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		B7B693571A5C3C54002F72BB /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		B7B693581A5C3C54002F72BB /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		B7FEE67D1A642D92005DAFE5 /* shop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +257,7 @@
 		1803555D181F59A500E0A0DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B7FEE67D1A642D92005DAFE5 /* shop@2x.png */,
 				B759C6581A5EBB6A003C09B2 /* L1.txt */,
 				1803555E181F59B000E0A0DF /* floor1.jpg */,
 				1803555F181F59B000E0A0DF /* tag.png */,
@@ -282,8 +282,6 @@
 				B7B693191A5C35F4002F72BB /* IndoorMapScrollView.m */,
 				B7B6931A1A5C35F4002F72BB /* IndoorMapViewNew.h */,
 				B7B6931B1A5C35F4002F72BB /* IndoorMapViewNew.m */,
-				188B029618222D8600D4EEC6 /* PopoverView.h */,
-				188B029718222D8600D4EEC6 /* PopoverView.m */,
 				188EFC77181F952200BAE962 /* UIImageView+Effects.h */,
 				188EFC78181F952200BAE962 /* UIImageView+Effects.m */,
 			);
@@ -435,6 +433,7 @@
 				18035561181F59B000E0A0DF /* tag.png in Resources */,
 				18035534181F574700E0A0DF /* Images.xcassets in Resources */,
 				18035526181F574700E0A0DF /* InfoPlist.strings in Resources */,
+				B7FEE67E1A642D92005DAFE5 /* shop@2x.png in Resources */,
 				B7AB10FE1A6036A000AA0AC1 /* map1_path_data.txt in Resources */,
 				B7823D461A5ED6BC0099BCDB /* map1_points.png in Resources */,
 				18035560181F59B000E0A0DF /* floor1.jpg in Resources */,
@@ -470,7 +469,6 @@
 				B7B693231A5C3668002F72BB /* MyPositon.m in Sources */,
 				B7B693471A5C38C8002F72BB /* PrimitivePoints.m in Sources */,
 				1803552C181F574700E0A0DF /* AppDelegate.m in Sources */,
-				188B029818222D8600D4EEC6 /* PopoverView.m in Sources */,
 				96DFC01E1827D20700CAEE5B /* CATransform3DPerspect.m in Sources */,
 				B7B6934E1A5C3B4B002F72BB /* ItemRelation.m in Sources */,
 				B7B693451A5C38C8002F72BB /* MifFileReader.mm in Sources */,

@@ -9,6 +9,10 @@
 #ifndef IndoorMapScene_Constants_h
 #define IndoorMapScene_Constants_h
 
+#pragma mark - font
+#define FONT_HELVETICALNEUE_BOLD_SETTING(__s__)         [UIFont fontWithName:@"HelveticaNeue-Bold" size:__s__]
+#define FONT_HELVETICALNEUE_SETTING(__s__)              [UIFont fontWithName:@"HelveticaNeue" size:__s__]
+
 #define MRScreenWidth                                   CGRectGetWidth([UIScreen mainScreen].applicationFrame)
 #define MRScreenHeight                                  CGRectGetHeight([UIScreen mainScreen].applicationFrame)
 

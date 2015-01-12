@@ -30,7 +30,13 @@
     indoorMapScrollView = [[IndoorMapScrollView alloc] initWithFrame:CGRectMake(0, 0.0f, MRScreenWidth, MRScreenHeight)];
     [self.view addSubview:indoorMapScrollView];
     
+    //寻找最短路径
     [indoorMapScrollView findShortestPath:CGPointMake(113.0f, 70.0f) end:CGPointMake(300, 389) filePath:@"map1_path_data"];
+    
+    //弹出popover
+    MyPositon *position = [[MyPositon alloc] init];
+    position.point = CGPointMake(113.0f, 70.0f);
+    [indoorMapScrollView popupOfPosition:position];
     
 }
 
