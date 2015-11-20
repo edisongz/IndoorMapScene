@@ -31,7 +31,7 @@
 //- (void)starSearch:(int)fid;
 - (void)starSearch:(int)fid withPaths:(NSMutableArray *)paths;
 
-- (void)resetSort:(int)last;
+- (void)resetSort:(NSInteger)last;
 - (BOOL)checkClose:(int)col row:(int)row;
 - (void)addToOpen:(int)col row:(int)row fid:(int)fid;
 //- (bool)checkMap:(int)col row:(int)row;
@@ -56,8 +56,5 @@
  *
  */
 - (AStarItem *)findNearestPoint:(int)col row:(int)row;
-
-- (NSMutableArray *)findMinDisTancePoints:(AStarItem *const)item count:(int)count;
-- (BOOL)isLinkedPointFrom:(AStarItem *const)from to:(AStarItem *)to;
 
 @end

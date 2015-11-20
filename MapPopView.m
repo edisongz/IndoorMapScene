@@ -49,7 +49,6 @@
         UIControl *control = [[UIControl alloc] initWithFrame:frame];
         [control addTarget:self action:@selector(onSelectShop) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:control];
-//        self.center = CGPointMake(point.x, point.y - 30.0f);
     }
     return self;
 }

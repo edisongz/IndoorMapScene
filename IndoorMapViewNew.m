@@ -321,10 +321,9 @@
         NSString *replaceStr1 = [replaceStr stringByReplacingOccurrencesOfString:@")" withString:@"}"];
         
         NSArray *array = [replaceStr1 componentsSeparatedByString:@"-"];
-        if (array) {
-            
+        if (array)
+        {
             ItemRelation *relation = [[ItemRelation alloc] init];
-            
             for (int i = 0; i < array.count; i++) {
                 
                 NSString *pointStr = [array objectAtIndex:i];
@@ -337,13 +336,6 @@
                 }
                 
                 CGPoint point = CGPointFromString(pointStr);
-                
-                //转换坐标系
-//                point.y = 760 - point.y;
-//                
-//                point.x = (point.x / 100.0f  - OFFSET_X) * RATIO;
-//                point.y = (MAP_HEIGHT - point.y / 100.0f) * RATIO + _offset_y;
-                
                 if (i == 0)
                 {
                     relation.point1.col = point.x;
@@ -354,30 +346,18 @@
                     relation.point2.col = point.x;
                     relation.point2.row = point.y;
                 }
-                
-                
             }
             //关系点集合
             [astar.relationArray addObject:relation];
         }
-        
     }
     
-    for (NSString *pointStr in points) {
-        
+    for (NSString *pointStr in points)
+    {
         AStarItem *item = [[AStarItem alloc] init];
-        
-        
         CGPoint point = CGPointFromString(pointStr);
         
-        //转换坐标系
-//        point.y = 760 - point.y;
-//        
-//        point.x = (point.x / 100.0f  - OFFSET_X) * RATIO;
-//        point.y = (MAP_HEIGHT - point.y / 100.0f) * RATIO + _offset_y;
-        
         [item setPos:point.x row:point.y];
-        
         //结点集合
         [results addObject:item];
     }
@@ -405,19 +385,7 @@
     CGFloat x_end = endX;
     CGFloat y_end = endY;
     
-    //图片大小458*404
-    //转化成可绘制坐标
-//    CGFloat x_ratio = 320 / 458.0f;
-//    CGFloat y_ratio = _mapView.frame.size.height / 404.f;
-//    x_start = x_start * x_ratio;
-//    y_start = y_start * y_ratio;// + _offset_y;
-//    x_end = x_end * x_ratio;
-//    y_end = y_end * y_ratio;// + _offset_y;
-    
-//    NSLog(@"start----->(%f, %f)", x_start, y_start);
-    
     AStarItem *item_start_nearest = [astar findNearestPoint:x_start row:y_start];
-    
     AStarItem *item_end_nearest = [astar findNearestPoint:x_end row:y_end];
 
     newPath = [astar findPath:item_start_nearest.id_col
