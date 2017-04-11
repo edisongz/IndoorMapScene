@@ -31,28 +31,28 @@
     //获得该点的g函数值
     AStarItem *item = (AStarItem *)[close objectAtIndex:fid];
     
-	int fx = [item id_col];
-	int fy = [item id_row];
-	int fg = [item id_g];
+    int fx = [item id_col];
+    int fy = [item id_row];
+    int fg = [item id_g];
     
-	if(fx - col != 0 && fy - row != 0) {
+    if(fx - col != 0 && fy - row != 0) {
         return fg + 14;
-	}
+    }
     else {
         return fg + 10;
-	}
+    }
 }
 
 - (int)getH:(int)col row:(int)row
 {
-//    AStarItem *item_dest = [[AStarItem alloc] init];
-//    item_dest.id_col = aimCol;
-//    item_dest.id_row = aimRow;
-//    
-//    AStarItem *item_curr = [[AStarItem alloc] init];
-//    item_curr.id_col = col;
-//    item_curr.id_row = row;
-	return abs(aimCol - col) * 10 + abs(aimRow - row) * 10;
+    //    AStarItem *item_dest = [[AStarItem alloc] init];
+    //    item_dest.id_col = aimCol;
+    //    item_dest.id_row = aimRow;
+    //
+    //    AStarItem *item_curr = [[AStarItem alloc] init];
+    //    item_curr.id_col = col;
+    //    item_curr.id_row = row;
+    return abs(aimCol - col) * 10 + abs(aimRow - row) * 10;
 }
 
 - (void)fromOpenToClose {
@@ -70,22 +70,22 @@
 - (void)getPath
 {
     //从整个close数组中找出路径
-	if([path count] == 0) {
+    if([path count] == 0) {
         [path addObject:[close objectAtIndex:[close count] - 1]];
-	}
+    }
     else {
         [path insertObject:[close objectAtIndex:[close count] - 1] atIndex:[path count] - 1];
-	}
+    }
     
-	while(true) {
-		if([(AStarItem *)[path objectAtIndex:0] id_g] == 0) {
+    while(true) {
+        if([(AStarItem *)[path objectAtIndex:0] id_g] == 0) {
             break;
-		}
+        }
         [path insertObject:[close objectAtIndex:[(AStarItem *)[path objectAtIndex:0] id_fid]] atIndex:0];
-	}
+    }
     
-	curCol = aimCol;
-	curRow = aimRow;
+    curCol = aimCol;
+    curRow = aimRow;
 }
 
 /**
@@ -170,25 +170,25 @@
 
 - (void)resetSort:(NSInteger)last {
     //根据步长排序，堆排序
-	while(last > 1){
+    while(last > 1){
         NSInteger half = last / 2;
         
         if([(AStarItem *)[open objectAtIndex:half] id_f] <= [(AStarItem *)[open objectAtIndex:last] id_f])
             break;
         [open exchangeObjectAtIndex:half withObjectAtIndex:last];
         last = half;
-	}
+    }
 }
 
 - (BOOL)checkClose:(int)col row:(int)row {
     //检查close列表
     NSInteger count = [close count];
-	for(NSInteger i = count - 1;i >= 0;i --) {
+    for(NSInteger i = count - 1;i >= 0;i --) {
         if([(AStarItem *)[close objectAtIndex:i] id_col] == col &&
            [(AStarItem *)[close objectAtIndex:i] id_row] == row){
             return NO;
-		}
-	}
+        }
+    }
     return YES;
 }
 
@@ -203,7 +203,7 @@
     [temp setId_g:g];
     [temp setId_h:h];
     [temp setId_f:(g + h)];
-	[open addObject:temp];
+    [open addObject:temp];
     [self resetSort:[open count] - 1];
 }
 
@@ -222,7 +222,7 @@
                 continue;
             }
         }else{
-
+            
             result = YES;
             break;
         }
@@ -232,18 +232,18 @@
 
 - (bool)checkOpen:(int)col row:(int)row fid:(int)fid {
     //检查open列表中是否有更小的步长，并排序
-	for(NSUInteger i = [open count] - 1;i > 0;i --) {
-		if([(AStarItem *)[open objectAtIndex:i] id_col] == col && [(AStarItem *)[open objectAtIndex:i] id_row] == row){
-		    int tempG = [self getG:col row:row fid:fid];
-			if(tempG < [(AStarItem *)[open objectAtIndex:i] id_g]) {
+    for(NSUInteger i = [open count] - 1;i > 0;i --) {
+        if([(AStarItem *)[open objectAtIndex:i] id_col] == col && [(AStarItem *)[open objectAtIndex:i] id_row] == row){
+            int tempG = [self getG:col row:row fid:fid];
+            if(tempG < [(AStarItem *)[open objectAtIndex:i] id_g]) {
                 [(AStarItem *)[open objectAtIndex:i] setId_g:tempG];
                 [(AStarItem *)[open objectAtIndex:i] setId_fid:fid];
                 [(AStarItem *)[open objectAtIndex:i] setId_f:(tempG + [(AStarItem *)[open objectAtIndex:i] id_h])];
                 [self resetSort:i];
-			}
-			return NO;
-		}
-	}
+            }
+            return NO;
+        }
+    }
     return YES;
 }
 
@@ -252,10 +252,10 @@
                     withPath:(NSMutableArray *)paths {
     
     //参数以及记录路径数组初始化
-	curCol = curX;
+    curCol = curX;
     curRow = curY;
-	aimCol = aimX;
-	aimRow = aimY;
+    aimCol = aimX;
+    aimRow = aimY;
     path = [[NSMutableArray alloc] init];
     open = [[NSMutableArray alloc] init];
     
@@ -274,9 +274,9 @@
         close = [[NSMutableArray alloc] init];
     }
     [close removeAllObjects];
-	
+    
     //遍历寻找路径
-	while([open count] > 1) {
+    while([open count] > 1) {
         [self fromOpenToClose];//open和close列表管理
         NSUInteger fatherid = [close count] - 1;
         
@@ -289,21 +289,21 @@
             //搜索
             [self starSearch:fatherid withPaths:paths];
         }
-	}
+    }
     
     [open removeAllObjects];
     [close removeAllObjects];
     //获得路径
-	if([path count] == 0) {
+    if([path count] == 0) {
         return NULL;
-	}
+    }
     else {
-		if([(AStarItem *)[path lastObject] id_col] != aimCol || [(AStarItem *)[path lastObject] id_row] != aimRow) {
+        if([(AStarItem *)[path lastObject] id_col] != aimCol || [(AStarItem *)[path lastObject] id_row] != aimRow) {
             AStarItem * temp = [[AStarItem alloc] init];
             [temp setPos:aimCol row:aimRow];
             [path addObject:temp];
-		}
-		return path;
-	}
+        }
+        return path;
+    }
 }
 @end

@@ -12,8 +12,7 @@
 
 @synthesize id_col,id_row, id_fid,id_f, id_g, id_h;
 
-- (void)setPos:(int)col row:(int)row
-{
+- (void)setPos:(int)col row:(int)row {
     self.id_col = col;
     self.id_row = row;
 }
