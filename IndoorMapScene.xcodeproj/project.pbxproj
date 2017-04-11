@@ -22,12 +22,9 @@
 		18035547181F574700E0A0DF /* IndoorMapSceneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18035546181F574700E0A0DF /* IndoorMapSceneTests.m */; };
 		18035555181F580400E0A0DF /* AStarItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18035552181F580400E0A0DF /* AStarItem.mm */; };
 		18035556181F580400E0A0DF /* AStar.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18035554181F580400E0A0DF /* AStar.mm */; };
-		18035560181F59B000E0A0DF /* floor1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1803555E181F59B000E0A0DF /* floor1.jpg */; };
 		18035561181F59B000E0A0DF /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 1803555F181F59B000E0A0DF /* tag.png */; };
 		188EFC7B181F95EF00BAE962 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188EFC7A181F95EF00BAE962 /* QuartzCore.framework */; };
 		188EFC7F181FB8F100BAE962 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 188EFC7E181FB8F100BAE962 /* Utils.m */; };
-		96DFC01E1827D20700CAEE5B /* CATransform3DPerspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DFC01D1827D20700CAEE5B /* CATransform3DPerspect.m */; };
-		B759C6591A5EBB6A003C09B2 /* L1.txt in Resources */ = {isa = PBXBuildFile; fileRef = B759C6581A5EBB6A003C09B2 /* L1.txt */; };
 		B7823D461A5ED6BC0099BCDB /* map1_points.png in Resources */ = {isa = PBXBuildFile; fileRef = B7823D451A5ED6BC0099BCDB /* map1_points.png */; };
 		B7AB10FE1A6036A000AA0AC1 /* map1_path_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = B7AB10FD1A6036A000AA0AC1 /* map1_path_data.txt */; };
 		B7B282931A5D7356003C1FE6 /* map1.png in Resources */ = {isa = PBXBuildFile; fileRef = B7B282921A5D7356003C1FE6 /* map1.png */; };
@@ -37,16 +34,11 @@
 		B7B6931F1A5C35F4002F72BB /* IndoorMapViewNew.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B6931B1A5C35F4002F72BB /* IndoorMapViewNew.m */; };
 		B7B693231A5C3668002F72BB /* MyPositon.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693221A5C3668002F72BB /* MyPositon.m */; };
 		B7B693431A5C38C8002F72BB /* FacilityPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693371A5C38C8002F72BB /* FacilityPoints.m */; };
-		B7B693441A5C38C8002F72BB /* MifFileData.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693391A5C38C8002F72BB /* MifFileData.m */; };
-		B7B693451A5C38C8002F72BB /* MifFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = B7B6933B1A5C38C8002F72BB /* MifFileReader.mm */; };
-		B7B693461A5C38C8002F72BB /* MifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B6933D1A5C38C8002F72BB /* MifHeader.m */; };
 		B7B693471A5C38C8002F72BB /* PrimitivePoints.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B6933F1A5C38C8002F72BB /* PrimitivePoints.m */; };
 		B7B693481A5C38C8002F72BB /* NSFileHandle+readLine.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693421A5C38C8002F72BB /* NSFileHandle+readLine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B7B6934E1A5C3B4B002F72BB /* ItemRelation.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B6934D1A5C3B4B002F72BB /* ItemRelation.m */; };
 		B7B693511A5C3B86002F72BB /* MapPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693501A5C3B86002F72BB /* MapPopView.m */; };
 		B7B693541A5C3BD2002F72BB /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693531A5C3BD2002F72BB /* Shop.m */; };
-		B7B693591A5C3C54002F72BB /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B7B693561A5C3C54002F72BB /* SVProgressHUD.bundle */; };
-		B7B6935A1A5C3C54002F72BB /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B693581A5C3C54002F72BB /* SVProgressHUD.m */; };
 		B7FEE67E1A642D92005DAFE5 /* shop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FEE67D1A642D92005DAFE5 /* shop@2x.png */; };
 		B7FEE6811A6432DC005DAFE5 /* path.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FEE6801A6432DC005DAFE5 /* path.png */; };
 /* End PBXBuildFile section */
@@ -84,14 +76,10 @@
 		18035552181F580400E0A0DF /* AStarItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AStarItem.mm; sourceTree = "<group>"; };
 		18035553181F580400E0A0DF /* AStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AStar.h; sourceTree = "<group>"; };
 		18035554181F580400E0A0DF /* AStar.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AStar.mm; sourceTree = "<group>"; };
-		1803555E181F59B000E0A0DF /* floor1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floor1.jpg; sourceTree = "<group>"; };
 		1803555F181F59B000E0A0DF /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
 		188EFC7A181F95EF00BAE962 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		188EFC7D181FB8F100BAE962 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		188EFC7E181FB8F100BAE962 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		96DFC01C1827D20700CAEE5B /* CATransform3DPerspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATransform3DPerspect.h; sourceTree = "<group>"; };
-		96DFC01D1827D20700CAEE5B /* CATransform3DPerspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATransform3DPerspect.m; sourceTree = "<group>"; };
-		B759C6581A5EBB6A003C09B2 /* L1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = L1.txt; sourceTree = "<group>"; };
 		B7823D451A5ED6BC0099BCDB /* map1_points.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map1_points.png; sourceTree = "<group>"; };
 		B7AB10FD1A6036A000AA0AC1 /* map1_path_data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map1_path_data.txt; sourceTree = "<group>"; };
 		B7B282921A5D7356003C1FE6 /* map1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map1.png; sourceTree = "<group>"; };
@@ -108,12 +96,6 @@
 		B7B693341A5C3816002F72BB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B7B693361A5C38C8002F72BB /* FacilityPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacilityPoints.h; sourceTree = "<group>"; };
 		B7B693371A5C38C8002F72BB /* FacilityPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacilityPoints.m; sourceTree = "<group>"; };
-		B7B693381A5C38C8002F72BB /* MifFileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MifFileData.h; sourceTree = "<group>"; };
-		B7B693391A5C38C8002F72BB /* MifFileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MifFileData.m; sourceTree = "<group>"; };
-		B7B6933A1A5C38C8002F72BB /* MifFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MifFileReader.h; sourceTree = "<group>"; };
-		B7B6933B1A5C38C8002F72BB /* MifFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MifFileReader.mm; sourceTree = "<group>"; };
-		B7B6933C1A5C38C8002F72BB /* MifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MifHeader.h; sourceTree = "<group>"; };
-		B7B6933D1A5C38C8002F72BB /* MifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MifHeader.m; sourceTree = "<group>"; };
 		B7B6933E1A5C38C8002F72BB /* PrimitivePoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimitivePoints.h; sourceTree = "<group>"; };
 		B7B6933F1A5C38C8002F72BB /* PrimitivePoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimitivePoints.m; sourceTree = "<group>"; };
 		B7B693411A5C38C8002F72BB /* NSFileHandle+readLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+readLine.h"; sourceTree = "<group>"; };
@@ -124,9 +106,6 @@
 		B7B693501A5C3B86002F72BB /* MapPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPopView.m; sourceTree = "<group>"; };
 		B7B693521A5C3BD2002F72BB /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		B7B693531A5C3BD2002F72BB /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
-		B7B693561A5C3C54002F72BB /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		B7B693571A5C3C54002F72BB /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		B7B693581A5C3C54002F72BB /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		B7FEE67D1A642D92005DAFE5 /* shop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shop@2x.png"; sourceTree = "<group>"; };
 		B7FEE6801A6432DC005DAFE5 /* path.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = path.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,8 +232,6 @@
 			children = (
 				B7FEE6801A6432DC005DAFE5 /* path.png */,
 				B7FEE67D1A642D92005DAFE5 /* shop@2x.png */,
-				B759C6581A5EBB6A003C09B2 /* L1.txt */,
-				1803555E181F59B000E0A0DF /* floor1.jpg */,
 				1803555F181F59B000E0A0DF /* tag.png */,
 				B7B282921A5D7356003C1FE6 /* map1.png */,
 				B7823D451A5ED6BC0099BCDB /* map1_points.png */,
@@ -266,7 +243,6 @@
 		18035562181F918300E0A0DF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B7B693551A5C3C54002F72BB /* SVProgressHUD */,
 				B7B6934F1A5C3B86002F72BB /* MapPopView.h */,
 				B7B693501A5C3B86002F72BB /* MapPopView.m */,
 				B7B693141A5C35F4002F72BB /* IndoorMapPath.h */,
@@ -284,8 +260,6 @@
 		188EFC7C181FB8D500BAE962 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				96DFC01C1827D20700CAEE5B /* CATransform3DPerspect.h */,
-				96DFC01D1827D20700CAEE5B /* CATransform3DPerspect.m */,
 				188EFC7D181FB8F100BAE962 /* Utils.h */,
 				188EFC7E181FB8F100BAE962 /* Utils.m */,
 			);
@@ -310,12 +284,6 @@
 			children = (
 				B7B693361A5C38C8002F72BB /* FacilityPoints.h */,
 				B7B693371A5C38C8002F72BB /* FacilityPoints.m */,
-				B7B693381A5C38C8002F72BB /* MifFileData.h */,
-				B7B693391A5C38C8002F72BB /* MifFileData.m */,
-				B7B6933A1A5C38C8002F72BB /* MifFileReader.h */,
-				B7B6933B1A5C38C8002F72BB /* MifFileReader.mm */,
-				B7B6933C1A5C38C8002F72BB /* MifHeader.h */,
-				B7B6933D1A5C38C8002F72BB /* MifHeader.m */,
 				B7B6933E1A5C38C8002F72BB /* PrimitivePoints.h */,
 				B7B6933F1A5C38C8002F72BB /* PrimitivePoints.m */,
 			);
@@ -329,16 +297,6 @@
 				B7B693421A5C38C8002F72BB /* NSFileHandle+readLine.m */,
 			);
 			path = ReadLine;
-			sourceTree = "<group>";
-		};
-		B7B693551A5C3C54002F72BB /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				B7B693561A5C3C54002F72BB /* SVProgressHUD.bundle */,
-				B7B693571A5C3C54002F72BB /* SVProgressHUD.h */,
-				B7B693581A5C3C54002F72BB /* SVProgressHUD.m */,
-			);
-			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,8 +378,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B759C6591A5EBB6A003C09B2 /* L1.txt in Resources */,
-				B7B693591A5C3C54002F72BB /* SVProgressHUD.bundle in Resources */,
 				B7FEE6811A6432DC005DAFE5 /* path.png in Resources */,
 				B7B282931A5D7356003C1FE6 /* map1.png in Resources */,
 				18035561181F59B000E0A0DF /* tag.png in Resources */,
@@ -430,7 +386,6 @@
 				B7FEE67E1A642D92005DAFE5 /* shop@2x.png in Resources */,
 				B7AB10FE1A6036A000AA0AC1 /* map1_path_data.txt in Resources */,
 				B7823D461A5ED6BC0099BCDB /* map1_points.png in Resources */,
-				18035560181F59B000E0A0DF /* floor1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,18 +411,13 @@
 				B7B6931C1A5C35F4002F72BB /* IndoorMapPath.m in Sources */,
 				B7B6931E1A5C35F4002F72BB /* IndoorMapScrollView.m in Sources */,
 				B7B693511A5C3B86002F72BB /* MapPopView.m in Sources */,
-				B7B6935A1A5C3C54002F72BB /* SVProgressHUD.m in Sources */,
 				B7B6931D1A5C35F4002F72BB /* IndoorMapPathView.m in Sources */,
 				18035532181F574700E0A0DF /* ViewController.m in Sources */,
 				B7B693231A5C3668002F72BB /* MyPositon.m in Sources */,
 				B7B693471A5C38C8002F72BB /* PrimitivePoints.m in Sources */,
 				1803552C181F574700E0A0DF /* AppDelegate.m in Sources */,
-				96DFC01E1827D20700CAEE5B /* CATransform3DPerspect.m in Sources */,
 				B7B6934E1A5C3B4B002F72BB /* ItemRelation.m in Sources */,
-				B7B693451A5C38C8002F72BB /* MifFileReader.mm in Sources */,
-				B7B693441A5C38C8002F72BB /* MifFileData.m in Sources */,
 				18035555181F580400E0A0DF /* AStarItem.mm in Sources */,
-				B7B693461A5C38C8002F72BB /* MifHeader.m in Sources */,
 				B7B6931F1A5C35F4002F72BB /* IndoorMapViewNew.m in Sources */,
 				B7B693431A5C38C8002F72BB /* FacilityPoints.m in Sources */,
 				18035528181F574700E0A0DF /* main.m in Sources */,

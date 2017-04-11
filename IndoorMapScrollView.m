@@ -7,8 +7,6 @@
 //
 
 #import "IndoorMapScrollView.h"
-#import "SVProgressHUD/SVProgressHUD.h"
-
 #import "Constants.h"
 
 #define kPop_width          150.0f
@@ -46,7 +44,7 @@
         [self setMaximumZoomScale:3.0f];
         [self setZoomScale:1.f];
         
-        popover = [[MapPopView alloc] initWithFrame:CGRectMake(0, 0, kPop_width, kPop_height) showAtPoint:CGPointMake(0, 0) withTile:@"海雅缤纷城" subTitle:@"brief"];
+        popover = [[MapPopView alloc] initWithFrame:CGRectMake(0, 0, kPop_width, kPop_height) showAtPoint:CGPointMake(0, 0) withTile:@"Name" subTitle:@"brief"];
         popover.hidden = YES;
         [self addSubview:popover];
         

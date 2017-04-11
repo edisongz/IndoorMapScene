@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MifFileReader.h"
 #import "MyPositon.h"
 #import "FacilityPoints.h"
 #import "PrimitivePoints.h"

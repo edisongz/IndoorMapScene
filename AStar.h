@@ -12,8 +12,7 @@
 @interface AStar : NSObject
 {
     int curCol, curRow, aimCol, aimRow;
-	int AimX, AimY, AimW, AimH;
-//	CCTMXTiledMap* map;
+    int AimX, AimY, AimW, AimH;
     NSMutableArray *open;
     NSMutableArray *close;
     NSMutableArray *path;
@@ -28,20 +27,20 @@
 - (void)fromOpenToClose;
 - (void)removeFromOpen;
 - (void)getPath;
-//- (void)starSearch:(int)fid;
 - (void)starSearch:(int)fid withPaths:(NSMutableArray *)paths;
 
 - (void)resetSort:(NSInteger)last;
 - (BOOL)checkClose:(int)col row:(int)row;
 - (void)addToOpen:(int)col row:(int)row fid:(int)fid;
-//- (bool)checkMap:(int)col row:(int)row;
+
 - (BOOL)checkMap:(int)col row:(int)row withPaths:(NSMutableArray *)paths;
 - (bool)checkOpen:(int)col row:(int)row fid:(int)fid;
-//- (NSMutableArray *)findPath:(int)curX curY:(int)curY aimX:(int)aimX aimY:(int)aimY;
+
+/**
+ *  找出路径
+ */
 - (NSMutableArray *)findPath:(int)curX curY:(int)curY aimX:(int)aimX aimY:(int)aimY withPath:(NSMutableArray *)paths;
 
-
-//new method
 /**
  *  找出邻接点
  *
