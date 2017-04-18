@@ -12,7 +12,7 @@ Welcome to the IndoorMapScene wiki!
 
 #### 对应的邻接结点组成的无向图用于规划路线，A*通过寻找邻接结点快速找到最短路径。
 ##### 结点数据：
-##<a name="code"/>数据高亮
+## <a name="code"/>数据高亮
 ```txt
 #Undirected graph points data
 (113, 70)-(149, 68)
